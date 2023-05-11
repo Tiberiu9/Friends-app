@@ -1,0 +1,42 @@
+<% if user_signed_in? %>
+  
+  
+  <h1>Friends</h1>
+  <table class="table table-striped table-hover table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th> First name</th>
+        <th> Last name</th>
+        <th> Email</th>
+        <th> Phone</th>
+        <th> Twitter</th>
+        <th> Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @friends.each do |friend| %>
+        <% if friend.user == current_user %>
+          <tr>
+            <td><%= friend.first_name %></td>
+            <td><%= friend.last_name %></td>
+            <td><%= friend.email %></td>
+            <td><%= friend.phone %></td>
+            <td><%= friend.twitter %></td>
+            <td>
+              <ul>
+                <%= link_to "Show this friend", friend, class:"btn btn-secondary"%>
+              </ul>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Add new friend", new_friend_path, class:"btn btn-secondary" %>
+<% else %>
+
+ <%= render 'home/index' %>
+  
+<% end %>
+  
+  

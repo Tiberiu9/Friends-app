@@ -1,0 +1,51 @@
+<p>Style 1</p>
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold"> <%= @friend.first_name %> <%= @friend.last_name %> </h1>
+    <p class="col-md-8 fs-4"></p>
+    <hr>
+    <p><%= @friend.email %>  |  <%= @friend.phone %>  |  <%= @friend.twitter %></p>
+    <p>
+  
+      <%= link_to "Edit this friend", edit_friend_path(@friend), class:"btn btn-secondary" %>
+      <%= link_to "Back to friends", friends_path, class:"btn btn-secondary"  %>
+      <%= link_to "Delete Friend", @friend, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-dark' %>
+    </p>
+    <p>
+      
+    </p>
+  </div>
+</div>
+<br>
+<p>Style 2</p>
+<div class="container-fluid bg-dark text-light p-5">
+  <div class="container bg-dark p-5">
+    <h1 class="display-4"><%= @friend.first_name %>  <%= @friend.last_name %> </h1>
+    <hr>
+    <p>
+      <strong>First nameeeee:</strong>
+      <%= @friend.first_name %>
+    </p>
+    <p>
+      <strong>Last name:</strong>
+      <%= @friend.last_name %>
+    </p>
+    <p>
+      <strong>Email:</strong>
+      <%= @friend.email %>
+    </p>
+    <p>
+      <strong>Phone:</strong>
+      <%= @friend.phone %>
+    </p>
+    <p>
+      <strong>Twitter:</strong>
+      <%= @friend.twitter %>
+    </p>
+    <p>
+      <%= link_to "Edit friend", edit_friend_path(@friend), class:"btn btn-secondary" %>
+      <%= link_to "Back to friends", friends_path, class:"btn btn-secondary"  %>
+      <%= link_to "Delete Friend", @friend, method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    </p>
+  </div>
+
