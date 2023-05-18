@@ -6,7 +6,7 @@
 
 services:
   - type: web
-    name: bookme
+    name: Friends-list
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: bundle exec rails s
@@ -19,7 +19,7 @@ services:
         sync: false
     plan: free
   - type: redis
-    name: redis
+    name: redis-friends-list
     ipAllowList: []
     plan: free
     maxmemoryPolicy: noeviction
