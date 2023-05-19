@@ -10,7 +10,7 @@ services:
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: bundle exec rails s
-    region: frankfurt
+    region: oregon
     envVars:
       # - key: DATABASE_URL
       #   fromDatabase:
@@ -19,9 +19,9 @@ services:
       - key: RAILS_MASTER_KEY
         sync: false
     plan: free
-  - type: redis
-    name: redis-friends-list
-    region: frankfurt
-    ipAllowList: []
-    plan: free
-    maxmemoryPolicy: noeviction
+  # - type: redis
+  #   name: redis-friends-list
+  #   region: oregon
+  #   ipAllowList: []
+  #   plan: free
+  #   maxmemoryPolicy: noeviction
