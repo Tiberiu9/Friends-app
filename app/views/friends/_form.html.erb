@@ -10,12 +10,10 @@
       </ul>
     </div>
   <% end %>
-
   <div class="mb-3">
     <%= form.label :first_name%>
     <%= form.text_field :first_name, class:"form-control" %>
   </div>
-
   <div class="mb-3">
     <%= form.label :last_name%>
     <%= form.text_field :last_name, class:"form-control" %>
@@ -39,12 +37,6 @@
   <div class="mb-3">
     <%= form.number_field :user_id, id: :friend_user_id, class:"form-control", value: current_user.id, type: :hidden %>
   </div>
-
-  
-
-
-
-  
 
   <div>
     <%= form.submit class:"btn btn-secondary"%>

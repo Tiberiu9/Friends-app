@@ -1,8 +1,8 @@
 class Friend < ApplicationRecord
   belongs_to :user
-  validates :first_name, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 200 }
-  validates :last_name, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 200 }
-  validates :email, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 200 },
+  validates :first_name, presence: true, length: { minimum: 3, maximum: 100 }
+  validates :last_name, presence: true, length: { minimum: 3, maximum: 100 }
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 100 },
                     format: { with: URI::MailTo::EMAIL_REGEXP }
 
   validates :phone,   presence: true,
